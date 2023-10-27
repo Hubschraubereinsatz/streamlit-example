@@ -55,23 +55,22 @@ with tab3:
     # col1, col2, col3 , col4, col5= st.columns(5, gap="large")
 
     st.header("Theo")
-    theo = Image.open('./pics/theo.jpg')
+    theo = Image.open('./pics/theo.jpg').resize((400, 400))
     st.image(theo, caption='https://www.linkedin.com/in/theodor-nguyen-816269133/')
 
     st.header("Tim")
-    tim = Image.open('./pics/tim.jpg')
+    tim = Image.open('./pics/tim.jpg').resize((400, 400))
     st.image(tim, caption='https://www.linkedin.com/in/tim%2Dvielhauer%2D66984026b/')
 
     st.header("Alfred")
-    alfred = Image.open('./pics/alfred.jpg')
+    alfred = Image.open('./pics/alfred.jpg').resize((400, 400))
     st.image(alfred, caption='https://www.linkedin.com/in/alfred-quan-anh-nguyen/')
 
     st.header("Niclas")
-    niclas = Image.open('./pics/niclas.jpg')
+    niclas = Image.open('./pics/niclas.jpg').resize((400, 400))
     st.image(niclas, caption='https://www.linkedin.com/in/niclas-schilling/')
 
-
     st.header("Benno")
-    benno = Image.open('./pics/benno.jpg')
+    benno = Image.open('./pics/benno.jpg').resize((400, 400))
     st.image(benno, caption='https://www.linkedin.com/in/benno-koesters/')
     
