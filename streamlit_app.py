@@ -47,7 +47,7 @@ with tab2:
         np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
         columns=['lat', 'lon'])
 
-    st.map(df, longitude=-1.415, latitude=52.2323, zoom=6, min_zoom=5, max_zoom=15)
+    st.map(df, longitude=-1.415, latitude=52.2323)
 
 with tab3:
 
