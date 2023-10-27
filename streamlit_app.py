@@ -15,6 +15,8 @@ forums](https://discuss.streamlit.io).
 In the meantime, below is an example of what you can do with just a few lines of code:
 """
 
+st.write("# Forest Fever 🌳")
+
 tab1, tab2 = st.tabs(["landing page", "interactive map"])
 
 with tab1:
