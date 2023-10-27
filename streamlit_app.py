@@ -24,10 +24,13 @@ with tab1:
         )
 
     with st.sidebar:
-        darmstadt = st.button(
-            "centralize"
-        )
-        
+        st.button("Reset", type="primary")
+        if st.button('Say hello'):
+            st.write('Why hello there')
+        else:
+            st.write('Goodbye')
+
+with tab2:
     df = pd.DataFrame(
         np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
         columns=['lat', 'lon'])
