@@ -49,6 +49,10 @@ with tab2:
 
     st.map(df)
 
+    view_state = map.ViewState(
+        longitude=-1.415, latitude=52.2323, zoom=6, min_zoom=5, max_zoom=15, pitch=0, bearing=0
+    )
+
 
 with tab3:
 
