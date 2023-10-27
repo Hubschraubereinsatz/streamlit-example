@@ -1,11 +1,12 @@
 import pandas as pd
 import streamlit as st
 import numpy as np
-from datetime import datetime, timedelta
 from PIL import Image
 import pydeck as pdk
 import xarray
 import matplotlib.pyplot as plt
+
+from datetime import datetime, timedelta
 
 st.write("# CanopyAI 🌳👑")
 
@@ -51,6 +52,10 @@ with tab1:
 with tab2:
 
     ds = xarray.load_dataset("load-raw.nc")
+    plt.imshow(data[0, 0, :, :])  # Assuming you want to display the first variable and time step
+    plt.colorbar()
+    st.plt.show()
+
     layer = pdk.Layer(
 
         "ScatterplotLayer",
