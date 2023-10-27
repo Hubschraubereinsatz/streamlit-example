@@ -1,6 +1,7 @@
 import pandas as pd
 import streamlit as st
 import numpy as np
+from datetime import datetime, timedelta
 
 st.write("# Forest Fever 🌳")
 
@@ -8,7 +9,17 @@ tab1, tab2, tab3 = st.tabs(["landing page", "interactive map", "about us"])
 
 with tab1:
     # Using object notation
-    total_points = st.sidebar.slider("date", 1, 5000, 2000)
+    # Erstelle einen Date/Time-Schieberegler mit einem Wochenbereich
+    start_date = datetime(2020, 1, 1)
+    end_date = start_date + timedelta(weeks=1)
+    
+    selected_date = st.slider(
+        "Wählen Sie einen Datumsbereich",
+        min_value=start_date,
+        max_value=end_date,
+        value=(start_date, end_date),
+        step=timedelta(days=1),
+    )
     num_turns = st.sidebar.slider("bsome bullshit", 1, 100, 9)
 
     add_selectbox = st.sidebar.selectbox(
