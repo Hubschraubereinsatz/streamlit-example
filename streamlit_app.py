@@ -51,17 +51,17 @@ with tab2:
 
 
 with tab3:
-    theo = Image.open('./pics/theo.jpg')
+    theo = Image.open('./pics/theo.jpg').resize((600, 400))
     st.image(theo, caption='https://www.linkedin.com/in/theodor-nguyen-816269133/')
 
-    alfred = Image.open('./pics/alfred.jpg')
+    alfred = Image.open('./pics/alfred.jpg').resize((600, 400))
     st.image(alfred, caption='https://www.linkedin.com/in/alfred-quan-anh-nguyen/')
 
-    tim = Image.open('./pics/tim.jpg')
+    tim = Image.open('./pics/tim.jpg').resize((600, 400))
     st.image(tim, caption='https://www.linkedin.com/in/tim%2Dvielhauer%2D66984026b/')
 
-    niclas = Image.open('./pics/niclas.jpg')
+    niclas = Image.open('./pics/niclas.jpg').resize((600, 400))
     st.image(niclas, caption='https://www.linkedin.com/in/niclas-schilling/')
 
-    benno = Image.open('./pics/benno.jpg')
+    benno = Image.open('./pics/benno.jpg').resize((600, 400))
     st.image(benno, caption='https://www.linkedin.com/in/benno-koesters/')
