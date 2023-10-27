@@ -4,7 +4,7 @@ import numpy as np
 from datetime import datetime, timedelta
 from PIL import Image
 
-st.write("# Forest Fever 🌳")
+st.write("# CanopyAI 🌳👑")
 
 tab1, tab2, tab3 = st.tabs(["landing page", "interactive map", "about us"])
 
