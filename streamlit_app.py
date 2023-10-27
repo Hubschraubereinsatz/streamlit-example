@@ -51,29 +51,21 @@ with tab1:
 
 with tab2:
 
-    ds = xarray.load_dataset("load-raw.nc")
-    data = ds[["B04"]].to_array()
-    plot = plt.imshow(data[0, 0, :, :])  # Assuming you want to display the first variable and time step
-    plt.colorbar()
-    st.pyplot(plot)
+    # Load your xarray dataset (Replace with your own dataset file)
+    ds = xarray.open_dataset("path_to_your_file.nc")
 
+    # Assuming "B04" is the variable you want to plot
+    data = ds["B04"]
+
+    # PyDeck Layer for Scatterplot
     layer = pdk.Layer(
         "ScatterplotLayer",
-        ds,
-        opacity=0.8,
-        stroked=False,
-        extruded=True,
-        wireframe=True,
-        get_fill_color="[255, 255, ds]",
-        get_line_color=[255, 255, 255],
-
-        # get_position="[lng, lat]",
-        # auto_highlight=True,
-        # elevation_scale=50,
-        # pickable=True,
-        # elevation_range=[0, 3000],
-        # extruded=True,
-        # coverage=1,
+        data=data,
+        get_position=["longitude", "latitude"],
+        get_radius=1000,  # Define the radius as per your data
+        get_fill_color=[255, 255, 255],  # Color specification
+        pickable=True,
+        auto_highlight=True
     )
     # Set the viewport location
     view_state = pdk.ViewState(
