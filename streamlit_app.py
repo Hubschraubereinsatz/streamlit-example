@@ -13,7 +13,7 @@ with tab1:
     start_date = datetime(2020, 1, 1)
     end_date = start_date + timedelta(weeks=1)
     
-    selected_date = st.slider(
+    selected_date = st.sidebar.slider(
         "Wählen Sie einen Datumsbereich",
         min_value=start_date,
         max_value=end_date,
