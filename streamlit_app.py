@@ -64,7 +64,7 @@ with tab2:
     )
     # Set the viewport location
     view_state = pdk.ViewState(
-        longitude=8.65027, latitude=49.87167 , zoom=20, min_zoom=5, max_zoom=15, pitch=0, bearing=0
+        longitude=8.65027, latitude=49.87167 , zoom=15, min_zoom=5, max_zoom=15, pitch=0, bearing=0
     )
     # Combined all of it and render a viewport
     r = pdk.Deck(
