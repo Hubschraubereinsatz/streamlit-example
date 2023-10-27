@@ -4,6 +4,8 @@ import numpy as np
 from datetime import datetime, timedelta
 from PIL import Image
 import pydeck as pdk
+import xarray
+import matplotlib.pyplot as plt
 
 st.write("# CanopyAI 🌳👑")
 
@@ -47,29 +49,17 @@ with tab1:
             st.write('fuck off')
 
 with tab2:
-    DATA_URL = (
-        "https://catalogue.dataspace.copernicus.eu/resto/collections/SENTINEL-2/ca459036-e1dc-5566-bcc9-081608e83598.json"
-    )
 
-    polygon = pdk.Layer(
-        "PolygonLayer",
-        stroked=False,
-        # processes the data as a flat longitude-latitude pair
-        get_polygon="-",
-        get_fill_color=[0, 0, 0, 20],
-    )
-    
-
+    ds = xarray.load_dataset("load-raw.nc")
     layer = pdk.Layer(
 
-        "GeoJsonLayer",
-        DATA_URL,
+        "ScatterplotLayer",
+        ds,
         opacity=0.8,
         stroked=False,
         extruded=True,
         wireframe=True,
-        get_elevation="properties.cloudCover",
-        get_fill_color="[255, 255, properties.cloudCover]",
+        get_fill_color="[255, 255, ds]",
         get_line_color=[255, 255, 255],
 
         # get_position="[lng, lat]",
