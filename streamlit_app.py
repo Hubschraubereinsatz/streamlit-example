@@ -50,18 +50,18 @@ with tab2:
     st.map(df)
 
 
-    with tab3:
-        theo = Image.open('theo.jpg')
-        st.image(theo, caption='https://www.linkedin.com/in/theodor-nguyen-816269133/')
+with tab3:
+    theo = Image.open('pics/theo.jpg')
+    st.image(theo, caption='https://www.linkedin.com/in/theodor-nguyen-816269133/')
 
-        alfred = Image.open('alfred.jpg')
-        st.image(alfred, caption='https://www.linkedin.com/in/alfred-quan-anh-nguyen/')
+    alfred = Image.open('pics/alfred.jpg')
+    st.image(alfred, caption='https://www.linkedin.com/in/alfred-quan-anh-nguyen/')
 
-        tim = Image.open('tim.jpg')
-        st.image(tim, caption='https://www.linkedin.com/in/tim%2Dvielhauer%2D66984026b/')
+    tim = Image.open('pics/tim.jpg')
+    st.image(tim, caption='https://www.linkedin.com/in/tim%2Dvielhauer%2D66984026b/')
 
-        niclas = Image.open('niclas.jpg')
-        st.image(niclas, caption='https://www.linkedin.com/in/niclas-schilling/')
+    niclas = Image.open('pics/niclas.jpg')
+    st.image(niclas, caption='https://www.linkedin.com/in/niclas-schilling/')
 
-        benno = Image.open('benno.jpg')
-        st.image(benno, caption='https://www.linkedin.com/in/benno-koesters/')
+    benno = Image.open('pics/benno.jpg')
+    st.image(benno, caption='https://www.linkedin.com/in/benno-koesters/')
