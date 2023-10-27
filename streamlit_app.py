@@ -53,7 +53,7 @@ with tab2:
     # Load xarray dataset 
     ds = xarray.open_dataset("load-raw.nc")
 
-    data = ds["B04"]
+    data_array = ds["B04"]
 
     # Define the coordinates bounding box
     bounding_box = {
