@@ -66,11 +66,10 @@ with tab2:
         DATA_URL,
         opacity=0.8,
         stroked=False,
-        filled=True,
         extruded=True,
         wireframe=True,
         get_elevation="properties.cloudCover / 20",
-        get_fill_color="[255, 255, properties.growth * 255]",
+        get_fill_color="[255, 255, properties.cloudCover * 255]",
         get_line_color=[255, 255, 255],
 
         # get_position="[lng, lat]",
