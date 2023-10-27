@@ -81,19 +81,19 @@ with tab2:
 
 
     # PyDeck Heatmap Layer
-    # heatmap_layer = pdk.Layer(
-    #    "HeatmapLayer",
-    #    data=coordinates,
-    #    get_position="[0, 1]",
-    #    aggregation='"MEAN"',
-    #    get_weight="data_array[2]",
-    #    opacity=0.8
-    # )
+    heatmap_layer = pdk.Layer(
+        "HeatmapLayer",
+        data=coordinates,
+        get_position="[0, 1]",
+        aggregation='"MEAN"',
+        get_weight="data_array[2]",
+        opacity=0.8
+    )
 
     pydeck_chart = pdk.Deck(
         map_style="mapbox://styles/mapbox/light-v9",
         initial_view_state=view_state,
-        # layers=[heatmap_layer]
+        layers= heatmap_layer
     )
 
     st.pydeck_chart(pydeck_chart)
