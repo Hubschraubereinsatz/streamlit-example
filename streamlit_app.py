@@ -50,35 +50,6 @@ with tab1:
             st.write('fuck off')
 
 with tab2:
-
-
-
-    # PyDeck Layer for Scatterplot
-    layer = pdk.Layer(
-           'HexagonLayer',
-           data=data,
-           get_position='[lon, lat]',
-           radius=200,
-           elevation_scale=4,
-           elevation_range=[0, 1000],
-           pickable=True,
-           extruded=True,
-    )
-    # Set the viewport location
-    view_state = pdk.ViewState(
-        longitude=8.65027, latitude=49.87167 , zoom=11, min_zoom=5, max_zoom=15, pitch=0, bearing=0
-    )
-    # Combined all of it and render a viewport
-    r = pdk.Deck(
-        map_style="mapbox://styles/mapbox/light-v9",
-        layers=[layer],
-        initial_view_state=view_state,
-        tooltip={"html": "<b>Elevation Value:</b> {elevationValue}", "style": {"color": "white"}},
-    )
-    st.pydeck_chart(r)
-
-
-
     # Load xarray dataset 
     ds = xarray.open_dataset("load-raw.nc")
 
