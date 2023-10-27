@@ -15,7 +15,7 @@ with tab1:
     end_date = start_date + timedelta(weeks=100)
 
     selected_date = st.sidebar.slider(
-        "Wählen Sie einen Datumsbereich",
+        "Select a date range",
         min_value=start_date,
         max_value=end_date,
         value=(start_date, end_date),
@@ -40,7 +40,7 @@ with tab1:
         if st.button('centralize '):
             st.write('centralized to darmstadt')
         else:
-            st.write('fuck of')
+            st.write('fuck off')
 
 with tab2:
     df = pd.DataFrame(
