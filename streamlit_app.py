@@ -2,6 +2,7 @@ import pandas as pd
 import streamlit as st
 import numpy as np
 from datetime import datetime, timedelta
+from PIL import Image
 
 st.write("# Forest Fever 🌳")
 
@@ -23,7 +24,7 @@ with tab1:
     num_turns = st.sidebar.slider("some bullshit", 1, 100, 9)
 
     add_selectbox = st.sidebar.selectbox(
-        "How would you like to be contacted?",
+        "Background map",
         ("Email", "Home phone", "Mobile phone")
     )
 
@@ -47,3 +48,20 @@ with tab2:
         columns=['lat', 'lon'])
 
     st.map(df)
+
+
+    with tab3:
+        theo = Image.open('theo.jpg')
+        st.image(theo, caption='https://www.linkedin.com/in/theodor-nguyen-816269133/')
+
+        alfred = Image.open('alfred.jpg')
+        st.image(alfred, caption='https://www.linkedin.com/in/alfred-quan-anh-nguyen/')
+
+        tim = Image.open('tim.jpg')
+        st.image(tim, caption='https://www.linkedin.com/in/tim%2Dvielhauer%2D66984026b/')
+
+        niclas = Image.open('niclas.jpg')
+        st.image(niclas, caption='https://www.linkedin.com/in/niclas-schilling/')
+
+        benno = Image.open('benno.jpg')
+        st.image(benno, caption='https://www.linkedin.com/in/benno-koesters/')
