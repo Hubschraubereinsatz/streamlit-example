@@ -52,12 +52,12 @@ with tab1:
 with tab2:
 
     ds = xarray.load_dataset("load-raw.nc")
-    plt.imshow(data[0, 0, :, :])  # Assuming you want to display the first variable and time step
+    data = ds[["B04"]].to_array()
+    plot = plt.imshow(data[0, 0, :, :])  # Assuming you want to display the first variable and time step
     plt.colorbar()
-    st.plt.show()
+    st.pyplot(plot)
 
     layer = pdk.Layer(
-
         "ScatterplotLayer",
         ds,
         opacity=0.8,
