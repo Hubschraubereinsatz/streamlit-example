@@ -59,13 +59,13 @@ with tab2:
 
     # PyDeck Layer for Scatterplot
     layer = pdk.Layer(
-        "ScatterplotLayer",
+        "HeatmapLayer",
         data=data,
-        get_position=["longitude", "latitude"],
-        get_radius=1000,  # Define the radius as per your data
-        get_fill_color=[255, 255, 255],  # Color specification
-        pickable=True,
-        auto_highlight=True
+        get_position=['longitude', 'latitude'],
+        aggregation='"MEAN"',  # Aggregation method (could be 'MEAN', 'SUM', 'MAX', etc.)
+        get_weight='data[0, 0, :, :]',  # Define the variable to be visualized
+        opacity=0.8
+        
     )
     # Set the viewport location
     view_state = pdk.ViewState(
