@@ -4,25 +4,14 @@ import math
 import pandas as pd
 import streamlit as st
 
-"""
-# Welcome to Streamlit!
-
-Edit `/streamlit_app.py` to customize this app to your heart's desire :heart:
-
-If you have any questions, checkout our [documentation](https://docs.streamlit.io) and [community
-forums](https://discuss.streamlit.io).
-
-In the meantime, below is an example of what you can do with just a few lines of code:
-"""
-
 st.write("# Forest Fever 🌳")
 
-tab1, tab2 = st.tabs(["landing page", "interactive map"])
+tab1, tab2, tab3 = st.tabs(["landing page", "interactive map", "abaout us"])
 
 with tab1:
     # Using object notation
-    total_points = st.sidebar.slider("Number of points in spiral", 1, 5000, 2000)
-    num_turns = st.sidebar.slider("Number of turns in spiral", 1, 100, 9)
+    total_points = st.sidebar.slider("date", 1, 5000, 2000)
+    num_turns = st.sidebar.slider("bsome bullshit", 1, 100, 9)
 
     add_selectbox = st.sidebar.selectbox(
         "How would you like to be contacted?",
@@ -32,8 +21,13 @@ with tab1:
     # Using "with" notation
     with st.sidebar:
         add_radio = st.radio(
-            "Choose a shipping method",
-            ("Standard (5-15 days)", "Express (2-5 days)")
+            "Choose a indicator",
+            ("dry", "wet", "ligma")
+        )
+
+    with st.sidebar:
+        darmstadt = st.button(
+            "centralize"
         )
 
 
