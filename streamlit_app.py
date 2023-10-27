@@ -53,7 +53,7 @@ with tab2:
     )
     layer = pdk.Layer(
         "HexagonLayer",
-        UK_ACCIDENTS_DATA,
+        "forest_data_test_large.json",
         get_position="[lng, lat]",
         auto_highlight=True,
         elevation_scale=50,
