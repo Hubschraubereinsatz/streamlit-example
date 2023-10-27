@@ -81,7 +81,7 @@ with tab2:
 
     # Assuming data_array is your xarray array
     # Access the underlying NumPy array using .values
-    numpy_array = data_array.values
+    numpy_array = data_array[2]
 
     # Flatten the NumPy array using ravel()
     flattened_array = numpy_array.ravel()
