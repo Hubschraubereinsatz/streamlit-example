@@ -20,7 +20,7 @@ with tab1:
         value=(start_date, end_date),
         step=timedelta(days=1),
     )
-    num_turns = st.sidebar.slider("bsome bullshit", 1, 100, 9)
+    num_turns = st.sidebar.slider("some bullshit", 1, 100, 9)
 
     add_selectbox = st.sidebar.selectbox(
         "How would you like to be contacted?",
@@ -36,10 +36,10 @@ with tab1:
 
     with st.sidebar:
         st.button("Reset", type="primary")
-        if st.button('Say hello'):
-            st.write('Why hello there')
+        if st.button('centralize '):
+            st.write('centralized to darmstadt')
         else:
-            st.write('Goodbye')
+            st.write('fuck of')
 
 with tab2:
     df = pd.DataFrame(
