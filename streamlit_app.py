@@ -63,7 +63,6 @@ with tab2:
            elevation_range=[0, 1000],
            pickable=True,
            extruded=True,
-        )
     )
     # Set the viewport location
     view_state = pdk.ViewState(
