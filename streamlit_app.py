@@ -79,13 +79,21 @@ with tab2:
         zoom=10
     )
 
+    # Assuming data_array is your xarray array
+    # Access the underlying NumPy array using .values
+    numpy_array = data_array.values
+
+    # Flatten the NumPy array using ravel()
+    flattened_array = numpy_array.ravel()
+
+
     # PyDeck Heatmap Layer
     heatmap_layer = pdk.Layer(
         "HeatmapLayer",
         data=coordinates,
         get_position="[0, 1]",
         aggregation='"MEAN"',
-        get_weight="weights",
+        get_weight="flattened_array",
         opacity=0.8
     )
 
