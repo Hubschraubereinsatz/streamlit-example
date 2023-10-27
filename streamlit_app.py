@@ -52,7 +52,7 @@ with tab1:
 with tab2:
 
     # Load your xarray dataset (Replace with your own dataset file)
-    ds = xarray.open_dataset("path_to_your_file.nc")
+    ds = xarray.open_dataset("load-raw.nc")
 
     # Assuming "B04" is the variable you want to plot
     data = ds["B04"]
