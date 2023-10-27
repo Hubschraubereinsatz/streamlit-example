@@ -47,20 +47,39 @@ with tab1:
             st.write('fuck off')
 
 with tab2:
-    UK_ACCIDENTS_DATA = (
-        "https://raw.githubusercontent.com/uber-common/"
-        "deck.gl-data/master/examples/3d-heatmap/heatmap-data.csv"
+    DATA_URL = (
+        "https://catalogue.dataspace.copernicus.eu/resto/collections/SENTINEL-2/ca459036-e1dc-5566-bcc9-081608e83598.json"
     )
+
+    polygon = pdk.Layer(
+        "PolygonLayer",
+        stroked=False,
+        # processes the data as a flat longitude-latitude pair
+        get_polygon="-",
+        get_fill_color=[0, 0, 0, 20],
+    )
+    
+
     layer = pdk.Layer(
-        "HexagonLayer",
-        "forest_data_test_large.json",
-        get_position="[lng, lat]",
-        auto_highlight=True,
-        elevation_scale=50,
-        pickable=True,
-        elevation_range=[0, 3000],
+
+        "GeoJsonLayer",
+        DATA_URL,
+        opacity=0.8,
+        stroked=False,
+        filled=True,
         extruded=True,
-        coverage=1,
+        wireframe=True,
+        get_elevation="properties.valuePerSqm / 20",
+        get_fill_color="[255, 255, properties.growth * 255]",
+        get_line_color=[255, 255, 255],
+
+        # get_position="[lng, lat]",
+        # auto_highlight=True,
+        # elevation_scale=50,
+        # pickable=True,
+        # elevation_range=[0, 3000],
+        # extruded=True,
+        # coverage=1,
     )
     # Set the viewport location
     view_state = pdk.ViewState(
