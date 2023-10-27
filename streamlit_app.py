@@ -69,7 +69,7 @@ with tab2:
         extruded=True,
         wireframe=True,
         get_elevation="properties.cloudCover",
-        get_fill_color="[255, 255, properties.cloudCover * 255]",
+        get_fill_color="[255, 255, properties.cloudCover]",
         get_line_color=[255, 255, 255],
 
         # get_position="[lng, lat]",
