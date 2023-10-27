@@ -67,12 +67,12 @@ with tab2:
     latitudes = np.linspace(bounding_box['south'], bounding_box['north'], data_array.shape[-2])
     longitudes = np.linspace(bounding_box['west'], bounding_box['east'], data_array.shape[-1])
 
-    # Create grid coordinates for the heatmap
+    # Create coordinates for the heatmap
     grid = np.meshgrid(longitudes, latitudes)
     coordinates = np.stack((grid[0], grid[1]), axis=-1).reshape(-1, 2)
 
 
-    # PyDeck View State focused on the provided bounding box
+    # PyDeck View State focused on bounding box
     view_state = pdk.ViewState(
         latitude=(bounding_box['south'] + bounding_box['north']) / 2,
         longitude=(bounding_box['west'] + bounding_box['east']) / 2,
@@ -81,20 +81,19 @@ with tab2:
 
 
     # PyDeck Heatmap Layer
-    heatmap_layer = pdk.Layer(
-        "HeatmapLayer",
-        data=coordinates,
-        get_position="[0, 1]",
-        aggregation='"MEAN"',
-        get_weight="data_array[2]",
-        opacity=0.8
-    )
+    # heatmap_layer = pdk.Layer(
+    #    "HeatmapLayer",
+    #    data=coordinates,
+    #    get_position="[0, 1]",
+    #    aggregation='"MEAN"',
+    #    get_weight="data_array[2]",
+    #    opacity=0.8
+    # )
 
-    # Combine all elements and render PyDeck chart
     pydeck_chart = pdk.Deck(
         map_style="mapbox://styles/mapbox/light-v9",
         initial_view_state=view_state,
-        layers=[heatmap_layer]
+        # layers=[heatmap_layer]
     )
 
     st.pydeck_chart(pydeck_chart)
