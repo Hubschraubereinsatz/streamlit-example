@@ -40,7 +40,7 @@ with tab1:
         st.button("Reset", type="primary")
         if st.button('centralize '):
             pdk.View(
-                longitude=8.65027, latitude=49.87167 , zoom=6, min_zoom=5, max_zoom=15, pitch=0, bearing=0
+                longitude=8.65027, latitude=49.87167 , zoom=11, min_zoom=5, max_zoom=15, pitch=0, bearing=0
             )
             st.write('centralized to darmstadt')
         else:
