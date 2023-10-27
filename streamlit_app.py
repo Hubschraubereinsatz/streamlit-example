@@ -25,7 +25,7 @@ with tab1:
 
     add_selectbox = st.sidebar.selectbox(
         "Background map",
-        ("Email", "Home phone", "Mobile phone")
+        ("default", "terrain", "satellite")
     )
 
     # Using "with" notation
