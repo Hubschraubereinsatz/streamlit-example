@@ -52,31 +52,31 @@ with tab2:
 
 with tab3:
 
-    col1, col2, col3 , col4, col5= st.columns(5, gap="small")
+    col1, col2, col3 , col4, col5= st.columns(5, gap="large")
 
 with col1:
-   st.header("Theo")
-   theo = Image.open('./pics/theo.jpg').resize((600, 400))
-   st.image(theo, caption='https://www.linkedin.com/in/theodor-nguyen-816269133/')
+    st.header("Theo")
+    theo = Image.open('./pics/theo.jpg').resize((600, 400))
+    st.image(theo, caption='https://www.linkedin.com/in/theodor-nguyen-816269133/')
    
 with col2:
-   st.header("Tim")
-   tim = Image.open('./pics/tim.jpg').resize((600, 400))
-   st.image(tim, caption='https://www.linkedin.com/in/tim%2Dvielhauer%2D66984026b/')
+    st.header("Tim")
+    tim = Image.open('./pics/tim.jpg').resize((600, 400))
+    st.image(tim, caption='https://www.linkedin.com/in/tim%2Dvielhauer%2D66984026b/')
 
 with col3:
-   st.header("Alfred")
-   alfred = Image.open('./pics/alfred.jpg').resize((600, 400))
-   st.image(alfred, caption='https://www.linkedin.com/in/alfred-quan-anh-nguyen/')
+    st.header("Alfred")
+    alfred = Image.open('./pics/alfred.jpg').resize((600, 400))
+    st.image(alfred, caption='https://www.linkedin.com/in/alfred-quan-anh-nguyen/')
 
 with col4:
-   st.header("Niclas")
-   niclas = Image.open('./pics/niclas.jpg').resize((600, 400))
-   st.image(niclas, caption='https://www.linkedin.com/in/niclas-schilling/')
+    st.header("Niclas")
+    niclas = Image.open('./pics/niclas.jpg').resize((600, 400))
+    st.image(niclas, caption='https://www.linkedin.com/in/niclas-schilling/')
 
 
 with col5:
-   st.header("Benno")
-   benno = Image.open('./pics/benno.jpg').resize((600, 400))
-   st.image(benno, caption='https://www.linkedin.com/in/benno-koesters/')
+    st.header("Benno")
+    benno = Image.open('./pics/benno.jpg').resize((600, 400))
+    st.image(benno, caption='https://www.linkedin.com/in/benno-koesters/')
     
