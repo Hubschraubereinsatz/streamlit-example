@@ -51,21 +51,19 @@ with tab1:
 
 with tab2:
 
-    # Load your xarray dataset (Replace with your own dataset file)
-    ds = xarray.open_dataset("load-raw.nc")
 
-    # Assuming "B04" is the variable you want to plot
-    data = ds["B04"]
 
     # PyDeck Layer for Scatterplot
     layer = pdk.Layer(
-        "HeatmapLayer",
-        data=data,
-        get_position=['longitude', 'latitude'],
-        aggregation='"MEAN"',  # Aggregation method (could be 'MEAN', 'SUM', 'MAX', etc.)
-        get_weight='data[0, 0, :, :]',  # Define the variable to be visualized
-        opacity=0.8
-        
+           'HexagonLayer',
+           data=data,
+           get_position='[lon, lat]',
+           radius=200,
+           elevation_scale=4,
+           elevation_range=[0, 1000],
+           pickable=True,
+           extruded=True,
+        )
     )
     # Set the viewport location
     view_state = pdk.ViewState(
@@ -79,6 +77,60 @@ with tab2:
         tooltip={"html": "<b>Elevation Value:</b> {elevationValue}", "style": {"color": "white"}},
     )
     st.pydeck_chart(r)
+
+
+
+    # Load xarray dataset 
+    ds = xarray.open_dataset("load-raw.nc")
+
+    data = ds["B04"]
+
+    # Define the coordinates bounding box
+    bounding_box = {
+        "west": 8.559718,
+        "south": 49.794677,
+        "east": 8.752842,
+        "north": 49.952662,
+    }
+
+    # Generate latitude and longitude coordinates within the bounding box
+    latitudes = np.linspace(bounding_box['south'], bounding_box['north'], data_array.shape[-2])
+    longitudes = np.linspace(bounding_box['west'], bounding_box['east'], data_array.shape[-1])
+
+    # Create grid coordinates for the heatmap
+    grid = np.meshgrid(longitudes, latitudes)
+    coordinates = np.stack((grid[0], grid[1]), axis=-1).reshape(-1, 2)
+
+    # Flatten the array data for the heatmap weights
+    weights = data_array.ravel()
+
+    # PyDeck View State focused on the provided bounding box
+    view_state = pdk.ViewState(
+        latitude=(bounding_box['south'] + bounding_box['north']) / 2,
+        longitude=(bounding_box['west'] + bounding_box['east']) / 2,
+        zoom=10
+    )
+
+    # PyDeck Heatmap Layer
+    heatmap_layer = pdk.Layer(
+        "HeatmapLayer",
+        data=coordinates,
+        get_position="[0, 1]",
+        aggregation='"MEAN"',
+        get_weight="weights",
+        opacity=0.8
+    )
+
+    # Combine all elements and render PyDeck chart
+    pydeck_chart = pdk.Deck(
+        map_style="mapbox://styles/mapbox/light-v9",
+        initial_view_state=view_state,
+        layers=[heatmap_layer]
+    )
+
+    st.pydeck_chart(pydeck_chart)
+
+
 
 with tab3:
 
