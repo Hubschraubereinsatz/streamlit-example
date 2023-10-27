@@ -71,8 +71,6 @@ with tab2:
     grid = np.meshgrid(longitudes, latitudes)
     coordinates = np.stack((grid[0], grid[1]), axis=-1).reshape(-1, 2)
 
-    # Flatten the array data for the heatmap weights
-    weights = data_array.ravel()
 
     # PyDeck View State focused on the provided bounding box
     view_state = pdk.ViewState(
