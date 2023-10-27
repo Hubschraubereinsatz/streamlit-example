@@ -69,7 +69,7 @@ with tab2:
         filled=True,
         extruded=True,
         wireframe=True,
-        get_elevation="properties.valuePerSqm / 20",
+        get_elevation="properties.cloudCover / 20",
         get_fill_color="[255, 255, properties.growth * 255]",
         get_line_color=[255, 255, 255],
 
